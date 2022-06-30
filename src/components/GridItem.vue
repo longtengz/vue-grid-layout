@@ -612,7 +612,6 @@
                         newPosition.top = this.scaleCoordinate(clientRect.top) - this.scaleCoordinate(parentRect.top);
                         this.dragging = newPosition;
                         this.isDragging = true;
-                        console.log("dragstart", this.dragging)
                         break;
                     }
                     case "dragend": {
@@ -631,7 +630,6 @@
                         this.dragging = null;
                         this.isDragging = false;
                         // shouldUpdate = true;
-                        console.log("dragend", this.dragging)
                         break;
                     }
                     case "dragmove": {
@@ -647,7 +645,6 @@
 //                        console.log("### drag => " + event.type + ", deltaX=" + coreEvent.deltaX + ", deltaY=" + coreEvent.deltaY);
 //                        console.log("### drag end => " + JSON.stringify(newPosition));
                         this.dragging = newPosition;
-                        console.log("dragmove", this.dragging)
                         break;
                     }
                 }
