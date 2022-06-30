@@ -446,7 +446,7 @@
         },
         methods: {
             scaleCoordinate: function (coordinate) {
-                return coordinate / this.scale
+                return coordinate * this.scale
             },
             createStyle: function () {
                 if (this.x + this.w > this.cols) {
@@ -636,11 +636,11 @@
                         const coreEvent = createCoreData(this.lastX, this.lastY, x, y);
 //                        Add rtl support
                         if (this.renderRtl) {
-                            newPosition.left = this.dragging.right - coreEvent.deltaX;
+                            newPosition.left = this.dragging.right - this.scaleCoordinate(coreEvent.deltaX);
                         } else {
-                            newPosition.left = this.dragging.left + coreEvent.deltaX;
+                            newPosition.left = this.dragging.left + this.scaleCoordinate(coreEvent.deltaX);
                         }
-                        newPosition.top = this.dragging.top + coreEvent.deltaY;
+                        newPosition.top = this.dragging.top + this.scaleCoordinate(coreEvent.deltaY);
 //                        console.log("### drag => " + event.type + ", x=" + x + ", y=" + y);
 //                        console.log("### drag => " + event.type + ", deltaX=" + coreEvent.deltaX + ", deltaY=" + coreEvent.deltaY);
 //                        console.log("### drag end => " + JSON.stringify(newPosition));
