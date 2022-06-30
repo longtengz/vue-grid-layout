@@ -1,5 +1,5 @@
 {
-  "name": "vue-grid-layout",
+  "name": "@longteng/vue-grid-layout",
   "version": "2.3.12",
   "description": "A draggable and resizable grid layout, as a Vue component.",
   "keywords": [
