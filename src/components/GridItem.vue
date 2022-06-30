@@ -474,6 +474,10 @@
                 }
 
                 let style;
+                pos.top = pos.top * this.scale;
+                pos.left = pos.left * this.scale;
+                pos.width = pos.width * this.scale;
+                pos.height = pos.height * this.scale;
                 // CSS Transforms support (default)
                 if (this.useCssTransforms) {
 //                    Add rtl support
