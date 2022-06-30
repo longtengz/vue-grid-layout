@@ -474,10 +474,6 @@
                 }
 
                 let style;
-                pos.top = pos.top * this.scale;
-                pos.left = pos.left * this.scale;
-                pos.width = pos.width * this.scale;
-                pos.height = pos.height * this.scale;
                 // CSS Transforms support (default)
                 if (this.useCssTransforms) {
 //                    Add rtl support
@@ -640,11 +636,11 @@
                         const coreEvent = createCoreData(this.lastX, this.lastY, x, y);
 //                        Add rtl support
                         if (this.renderRtl) {
-                            newPosition.left = this.dragging.right - this.scaleCoordinate(coreEvent.deltaX);
+                            newPosition.left = this.scaleCoordinate(this.dragging.right) - this.scaleCoordinate(coreEvent.deltaX);
                         } else {
-                            newPosition.left = this.dragging.left + this.scaleCoordinate(coreEvent.deltaX);
+                            newPosition.left = this.scaleCoordinate(this.dragging.left) + this.scaleCoordinate(coreEvent.deltaX);
                         }
-                        newPosition.top = this.dragging.top + this.scaleCoordinate(coreEvent.deltaY);
+                        newPosition.top = this.scaleCoordinate(this.dragging.top) + this.scaleCoordinate(coreEvent.deltaY);
 //                        console.log("### drag => " + event.type + ", x=" + x + ", y=" + y);
 //                        console.log("### drag => " + event.type + ", deltaX=" + coreEvent.deltaX + ", deltaY=" + coreEvent.deltaY);
 //                        console.log("### drag end => " + JSON.stringify(newPosition));
